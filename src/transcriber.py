@@ -46,7 +46,7 @@ def process_audio(
     try:
         if progress_cb:
             progress_cb("載入轉錄模型")
-        model = whisperx.load_model("large-v3", device, compute_type=compute_type, language="zh")
+        model = whisperx.load_model("large-v3", device, compute_type=compute_type)
 
         if progress_cb:
             progress_cb("語音轉錄中")

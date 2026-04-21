@@ -19,7 +19,7 @@ from src.transcriber import process_audio
 
 app = FastAPI(title="Whisper Diarize Service", version="0.2.0")
 
-ALLOWED_EXTENSIONS = {".wav", ".mp3", ".m4a", ".flac", ".ogg", ".aac"}
+ALLOWED_EXTENSIONS = {".wav", ".mp3", ".m4a", ".flac", ".ogg", ".aac", ".mp4", ".mkv", ".avi", ".mov", ".webm"}
 JOB_CLEANUP_INTERVAL_SECONDS = 60
 JOB_RESULT_TTL_SECONDS = 1800
 JOB_FAILED_TTL_SECONDS = 900
@@ -298,9 +298,9 @@ def index() -> str:
       </div>
 
       <div class='field'>
-        <label for='audio_files'>Audio Files</label>
+        <label for='audio_files'>Audio / Video Files</label>
         <input id='audio_files' type='file' name='audio_files' multiple required>
-        <div class='help' id='file-help'>支援多檔上傳：wav, mp3, m4a, flac, ogg, aac</div>
+        <div class='help' id='file-help'>支援多檔上傳：wav, mp3, m4a, flac, ogg, aac, mp4, mkv, avi, mov, webm</div>
       </div>
 
       <div class='actions'>
